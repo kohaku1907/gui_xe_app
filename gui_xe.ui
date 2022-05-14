@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1112</width>
-    <height>777</height>
+    <width>1130</width>
+    <height>618</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,16 +25,6 @@
     </property>
     <property name="text">
      <string>Thêm xe gửi</string>
-    </property>
-   </widget>
-   <widget class="QTableView" name="tableView">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>1081</width>
-      <height>651</height>
-     </rect>
     </property>
    </widget>
    <widget class="QDateEdit" name="dateEdit">
@@ -70,14 +60,44 @@
      <string>Xuất Excel</string>
     </property>
    </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>81</y>
+      <width>1081</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>STT</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Số xe</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Ngày tạo</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Actions</string>
+     </property>
+    </column>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1112</width>
-     <height>26</height>
+     <width>1130</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

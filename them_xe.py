@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from SqliteHelper import *
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -31,6 +31,9 @@ class Ui_Dialog(object):
         self.pushButton.setText(_translate("Dialog", "Thêm Xe"))
         self.textEdit.setPlaceholderText(_translate("Dialog", "Số xe"))
 
+    def addBike(so_xe):
+        helper = SqliteHelper("gui_xe.db")
+        helper.edit(f"INSERT INTO xe_gui (so_xe) VALUES ('{so_xe}')")
 
 if __name__ == "__main__":
     import sys
