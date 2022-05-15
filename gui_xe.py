@@ -309,6 +309,12 @@ class Ui_MainWindow(object):
         handler = PrintHandler()
         handler.setPage(data)
         handler.print()
+        self.resetUserCursor()
+
+    def resetUserCursor(self):
+        self.lineEdit.clear()
+        self.lineEdit.setFocus()
+
 
     def printPreview(self, printer):
         self.veXeView.document().print_(printer)
