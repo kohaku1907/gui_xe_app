@@ -36,6 +36,10 @@ class SqliteHelper:
         c.execute(query)
         return c.fetchall()
 
+    def getLastRowId(self):
+        c = self.cursor
+        return c.lastrowid
+
 
 test = SqliteHelper("gui_xe.db")
 test.create_table()
