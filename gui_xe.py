@@ -207,6 +207,7 @@ class Ui_MainWindow(object):
         font.setPointSize(28)
         self.lineEdit.setFont(font)
         self.lineEdit.setMaxLength(16)
+        self.lineEdit.returnPressed.connect(self.printInstant)
         self.lineEdit.setObjectName("lineEdit")
 
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
@@ -260,6 +261,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Gửi Xe TNT Gaming"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "Nhập số xe"))
         self.pushButton.setText(_translate("MainWindow", "In"))
+        self.pushButton.setDefault(True)
+        self.pushButton.setAutoDefault(False)
         self.pushButton_2.setText(_translate("MainWindow", ">>>"))
         item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Số xe"))
