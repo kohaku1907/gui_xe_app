@@ -84,19 +84,6 @@ class PrintHandler(QObject):
            '''
         self.m_page.setHtml(html)
 
-    def parse_int_keys(dct):
-        rval = dict()
-        for key, val in dct.items():
-            try:
-                # Convert the key to an integer
-                int_key = int(key)
-                # Assign value to the integer key in the new dict
-                rval[int_key] = val
-            except ValueError:
-                # Couldn't convert key to an integer; Use original key
-                rval[key] = val
-        return rval
-
     @pyqtSlot()
     def print(self):
         printer = QPrinter(QPrinter.HighResolution)
@@ -233,16 +220,6 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(3, item)
 
-        #self.dateEdit = QtWidgets.QDateEdit(self.centralwidget)
-        #self.dateEdit.setGeometry(QtCore.QRect(390, 10, 181, 51))
-        #self.dateEdit.setObjectName("dateEdit")
-        #self.dateEdit.setCalendarPopup(True)
-
-        #self.dateEdit_2 = QtWidgets.QDateEdit(self.centralwidget)
-        #self.dateEdit_2.setGeometry(QtCore.QRect(210, 10, 181, 51))
-        #self.dateEdit_2.setObjectName("dateEdit_2")
-        #self.dateEdit_2.setCalendarPopup(True)
-
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1112, 26))
@@ -333,10 +310,7 @@ class Ui_MainWindow(object):
     def openExportCsvDialog(self):
         self.window = QtWidgets.QDialog()
         self.ui = Ui_Dialog()
-        #self.ui.exportCalled.connect(self.exportCSV)
-        #self.ui.buttonBox.accepted.connect(self.exportCSV)
         self.ui.setupUi(self.window)
-        #self.window.show()
         retValue = self.window.exec_()
         if retValue == QtWidgets.QDialog.Accepted:
             self.exportCSV({"from": self.ui.dateEdit.text(), "to": self.ui.dateEdit_2.text()})
