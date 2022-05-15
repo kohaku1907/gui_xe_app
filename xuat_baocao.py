@@ -15,7 +15,6 @@ from SqliteHelper import SqliteHelper
 
 
 class Ui_Dialog(object):
-    exportCalled = QtCore.pyqtSignal(dict)
 
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
